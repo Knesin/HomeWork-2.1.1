@@ -41,13 +41,13 @@ int main()
 	int* arr1;
 	int* arr2;
 
-	if (f_in.is_open()) {
-		f_in >> size_arr1;
-	}
-	else {
+	setlocale(LC_ALL, "Russian");
+
+	if (!f_in.is_open()) {
 		std::cout << "Не удалось открыть фаил" << std::endl;
 		return 1;
 	}
+	f_in >> size_arr1;
 	arr1 = fullArr(size_arr1, f_in);
 	f_in >> size_arr2;
 	arr2 = fullArr(size_arr2, f_in);
